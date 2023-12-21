@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: beige;
+}
+
+body{
+    height: 100vh;
+    background-image: url(img/html-css-collage-concept-with-person.jpg);
+    background-size: cover;
+}
+
+.para{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    p{
+        font-size: 3rem;
+        margin-right: 10px;
+    }
+    .learn{
+        display: flex;
+    }
+    button{
+        width: 100px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        border-style: none;
+    }
+}
