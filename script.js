@@ -1,4 +1,15 @@
-//import { pro, sum as add, mul } from "./script2.js";  //sum as add if you want to change name
+//!Topics
+//* What is JS Modules
+//* How to do import an export
+//* What is named(Aliases) export and default export
+//* how to Combine modules together
+//* What is namespace
+//* How to do Dynamic import using Promises
+
+//* Read more about -Tree Shaking-
+
+
+//import { pro, sum as add, mul } from "./script2.js";  //sum as add is called as Aliases
 
 import welcome from "./script3.js";  //from default here you can change name or it can be original name no matter.
 
@@ -23,3 +34,28 @@ console.log(error));
 console.log(calc.mul());
 
 console.log(welcome());
+
+//Combine
+
+// import * as com from "./combine.js";
+
+// console.log(com.file1.square(10));
+// console.log(com.addNumbers(1,2));
+// console.log(com.isEven(2));
+// console.log(com.file1.capitalizeString("modules"));
+
+//dynamic
+// const pro = await import("./combine.js");
+
+// console.log(pro.addNumbers(1,2));
+// console.log(pro.file1.generateRandomNumber(3,4));
+// console.log(pro.file1.greet("JS"));
+
+const pro2 = Promise.all([await import("./file1.js"), await import("./file2.js")]);
+
+pro2.then(
+   (res)=>{
+     console.log(res[1].greetInSpanish("Amigos"));
+     console.log(res[0].square(5));
+   }
+)
